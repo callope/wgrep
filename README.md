@@ -5,7 +5,7 @@ can be parsed into pretty much any programming language.
 
 ## Supported output formats
 
-- [ ] json
+- [x] json
 - [ ] toml
 - [ ] xml
 - [ ] csv
