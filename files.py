@@ -39,4 +39,5 @@ def ensure_path(dest: str):
     (if parent folders do not exist, it will
     create them.)
     """
-    os.makedirs(path.dirname(dest), exist_ok=True)
+    if path.dirname(dest):
+        os.makedirs(path.dirname(dest), exist_ok=True)
