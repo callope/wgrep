@@ -6,22 +6,21 @@ File utilities for this tool.
 """
 import os
 from os import path
+
+from pathlib import Path
 from shutil import rmtree
 
 
-# def rootname(dest: str):
-#     """
-#     Will return the root of a path.
-#     """
+def rootname(dest: str):
+    """
+    Will return the root of a path.
+    """
+    p = Path(dest)
 
-#     while True:
-#         if path.dirname(dest) in ['/', '']:
-#             break
-#         if dest.split('/') == 2:
-#             break
-#         dest = path.dirname(dest)
-
-#     return dest
+    return path.join(
+        p.parents[len(p.parents) - 1],
+        p.parents[len(p.parents) - 2]
+    )
 
 
 def remove_path(dest: str):
@@ -31,6 +30,7 @@ def remove_path(dest: str):
     ./a/b/c/d.xml, remove_path will act like `rm -rf
     ./a`)
     """
+    rmtree(rootname(dest), ignore_errors=True)
 
 
 def ensure_path(dest: str):
