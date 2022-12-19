@@ -3,9 +3,8 @@
 Gather whois information of a website into a file format that
 can be parsed into pretty much any programming language.
 
-## Supported output formats
+## Currently supported output formats
 
-- [x] json
-- [ ] toml
-- [ ] xml
-- [ ] csv
+- json
+- csv
+- toml (>= python 3.11)
