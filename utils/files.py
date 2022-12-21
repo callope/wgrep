@@ -1,6 +1,6 @@
 """
-files.py
---------
+utils.files
+-----------
 
 File utilities for this tool.
 """
@@ -11,15 +11,21 @@ from pathlib import Path
 from shutil import rmtree
 
 
+def save_to_file(data, out):
+    ensure_path(out)
+    with open(out, '+w') as file:
+        file.write(data)
+
+
 def rootname(dest: str):
     """
     Will return the root of a path.
     """
-    p = Path(dest)
+    _p = Path(dest)
 
     return path.join(
-        p.parents[len(p.parents) - 1],
-        p.parents[len(p.parents) - 2]
+        _p.parents[len(p.parents) - 1],
+        _p.parents[len(p.parents) - 2]
     )
 
 
@@ -30,14 +36,15 @@ def remove_path(dest: str):
     ./a/b/c/d.xml, remove_path will act like `rm -rf
     ./a`)
     """
-    rmtree(rootname(dest), ignore_errors=True)
+    _rootname = self.rootname
+    rmtree(_rootname(dest), ignore_errors=True)
 
 
 def ensure_path(dest: str):
-    """
-    Will ensure the folder hierarchy to a path
+    """Will ensure the folder hierarchy to a path
     (if parent folders do not exist, it will
     create them.)
     """
+
     if path.dirname(dest):
         os.makedirs(path.dirname(dest), exist_ok=True)

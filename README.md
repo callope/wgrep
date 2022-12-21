@@ -7,4 +7,4 @@ can be parsed into pretty much any programming language.
 
 - json
 - csv
-- toml (>= python 3.11)
+- toml
