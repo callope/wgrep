@@ -9,8 +9,9 @@ import json
 
 try:
     import tomlkit
-except ImportError:
-    raise Exception("tomlkit not found (did you installed requirements.txt? )")
+except ImportError as e:
+    print(f"error: {e} (did you installed requirements.txt?)")
+    exit(1)
 
 def fmt_json(data):
     return json.dumps(
@@ -18,6 +19,7 @@ def fmt_json(data):
         indent=2
     )
 
+# TODO: implememnt dict -> toml transformation
 def fmt_toml(data):
     ...
 
