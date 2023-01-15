@@ -1,9 +1,3 @@
-"""
-utils.files
------------
-
-File utilities for this tool.
-"""
 import os
 from os import path
 
@@ -11,7 +5,7 @@ from pathlib import Path
 from shutil import rmtree
 
 
-def save_to_file(data, out):
+def save_to_file(data: str, out: str):
     ensure_path(out)
     with open(out, '+w') as file:
         file.write(data)
