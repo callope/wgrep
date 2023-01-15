@@ -10,8 +10,7 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 VERSION = '0.0.1'
 DESCRIPTION = 'Parse whois data into program-readable formats (like JSON, XML, TOML, etc.)'
 LONG_DESCRIPTION = """A package that allows you to convert whois data to computer-readable data formats (like JSON, XML, etc.)
-It is convenient to make lookup programs or API integrations.
-"""
+It is convenient to make lookup programs or API integrations."""
 
 setup(
     name="wgrep",
