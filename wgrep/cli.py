@@ -39,14 +39,18 @@ cvt_table = {
     "toml": output.as_toml
 }
 
+
 def main():
     try:
         data = cvt_table[_fmt](_lnk)
     except KeyError:
         print(f"error: {_fmt} was not implemented")
         exit(1)
+    except Exception e:
+        print(f"error: {e} (unexpected error)")
+        exit(1)
 
-    save_to_file(data, _out)
+    save_to_file(str(data), _out)
 
 
 if __name__ == "__main__":
