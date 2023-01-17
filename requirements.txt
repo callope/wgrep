@@ -1,2 +1,4 @@
+dict2xml==1.7.2
 future==0.18.2
 python-whois==0.8.0
+toml==0.10.2
