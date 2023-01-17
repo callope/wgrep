@@ -28,6 +28,6 @@ data_toml = wgrep.as_toml('www.somewebsite.com')
 ## Currently supported output formats
 
 - json
-- csv
 - toml
+- xml
 
